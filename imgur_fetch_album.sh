@@ -21,12 +21,6 @@ then
 		exit	
 	fi
 else	
-	if [ -w "$DIR" ]
-	then
-		mkdir "$DIR"
-	else
-		echo "Don't have permission to write to $DIR"
-		exit
-	fi
+	mkdir "$DIR"
 fi
 wget "$1" -O - -o /dev/null|ack "(<a href=\"\/\/)(i\.imgur\.com\/.{7}\.(jpg|png|jpeg))" --output='$2'|sed 's/^/http:\/\//'|aria2c -x 16 -s 16 -i - -d "$DIR"
