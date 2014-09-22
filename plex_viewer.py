@@ -12,12 +12,12 @@ def getAttr(elem,key):
 	else:
 		return ""
 	
-
-server = 'http://10.0.33.26:32400'
-
-xmlurl = server + '/search?local=1&query=' + sys.argv[1]
-i=0
+# init variables
+i = 0
 dataList = []
+server = 'http://10.0.33.26:32400'
+xmlurl = server + '/search?local=1&query=' + sys.argv[1]
+
 try:
 	xml = urllib.request.urlopen(xmlurl)
 	dom = parse(xml)
@@ -40,7 +40,7 @@ try:
 	elif choice > 0 and choice <= len(dataList):
 		print(dataList[choice - 1])
 		call(["mpv",dataList[choice - 1]])
-except e as Exception:
+except Exception as e:
     print(e)
 
 
