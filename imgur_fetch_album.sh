@@ -23,4 +23,4 @@ then
 else	
 	mkdir "$DIR"
 fi
-wget "$1" -O - -o /dev/null|ack "(<a href=\"\/\/)(i\.imgur\.com\/.{7}\.(jpg|png|jpeg))" --output='$2'|sed 's/^/http:\/\//'|aria2c -x 16 -s 16 -i - -d "$DIR"
+wget "$1" -O - -o /dev/null|ack "(<a href=\"\/\/)(i\.imgur\.com\/.*\.(jpg|png|jpeg))" --output='$2'|sed 's/^/http:\/\//'|aria2c -x 16 -s 16 -i - -d "$DIR"
