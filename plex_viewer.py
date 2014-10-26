@@ -13,6 +13,9 @@ def getAttr(elem,key):
 		return ""
 	
 # init variables
+
+# this is a test comment
+
 i = 0
 dataList = []
 server = 'http://10.0.33.26:32400'
