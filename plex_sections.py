@@ -21,7 +21,7 @@ def main():
     global i, dataList, server, xmlurl, xml, dom, node, e
     i = 0
     dataList = []
-    server = 'http://127.0.0.1:32400'
+    server = 'http://10.0.33.26:32400'
     xmlurl = server + '/library/sections'
     try:
         xml = urllib.request.urlopen(xmlurl)
