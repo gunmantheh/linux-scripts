@@ -60,8 +60,11 @@ def main():
             setTitle('['+ speed + '/s] - ' + slots[0]['filename'] + ' - ' + slots[0]['sizeleft'])
         else:
             setTitle('Nothing is being downloaded')
-        for elem in slots:
-            printElement(elem)
+        if len(slots) > 0:
+            for elem in slots:
+                printElement(elem)
+        else:
+            print(Fore.RED + "Nothins is being downloaded")
         time.sleep(5)
 if __name__ == '__main__':
     main()
